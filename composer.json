@@ -1,0 +1,15 @@
+{
+    "name": "manage/todo",
+    "authors": [{
+        "name": "amir saffari",
+        "email": "amir@gmail.com"
+    }],
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        },
+        "files": ["app/helper.php"]
+    },
+    "require": {}
+
+}
