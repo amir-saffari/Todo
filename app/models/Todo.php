@@ -20,13 +20,22 @@ class Todo
         return $stmt->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function createTodo($text)
+    public function getTodosById($id)
     {
-        $stmt = $this->db->conn->prepare("INSERT INTO todos (text) VALUES (:text)");
-        $stmt->execute(['text' => $text]);
+        $stmt = $this->db->conn->prepare("SELECT * FROM todos WHERE id = :id");
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
-    public function updateTodo($id , $text)
+    public function createTodo($text , $user_id)
+    {
+       
+        $stmt = $this->db->conn->prepare("INSERT INTO todos (text , user_id) VALUES (:text , :user_id)");
+        $stmt->execute(['text' => $text , 'user_id' => $user_id]);
+            
+    }
+
+    public function updateTodo($text , $id)
     {
          $stmt = $this->db->conn->prepare("UPDATE todos SET text = :text WHERE id = :id");
          $stmt->execute(['text' => $text , 'id' => $id]);

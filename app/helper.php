@@ -8,4 +8,9 @@ function redirect($page, $session = [])
     exit;
 }
 
+function isLoggedin()
+{
+    return isset($_SESSION['user_id']);
+}
+
 

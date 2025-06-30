@@ -28,13 +28,15 @@
                 </ul>
 
                 <div class="d-flex align-items-center">
-
-                    <!-- <h6 class="mb-0">ali@gmail.com</h6>
-                    <a href="#" class="btn btn-sm btn-secondary ms-2">Logou</a> -->
-
+                    <?php if (isLoggedin()) : ?>
+                    <h6 class="mb-0"><?= $_SESSION['user_username'] ?></h6>
+                    <a href="#" class="btn btn-sm btn-secondary ms-2">Logout</a> 
+                    <?php else : ?>
+                    
                     <a href="<?= URL_ROOT ?>/users/loginForm" class="btn btn-sm btn-outline-dark">Login</a>
                     <a href="<?= URL_ROOT ?>/users/register" class="btn btn-sm btn-secondary ms-2">Register</a>
-
+                    <?php endif; ?>
+                    
                 </div>
             </div>
         </div>

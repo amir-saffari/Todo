@@ -2,10 +2,19 @@
 
 namespace app\controllers;
 
+use app\models\Todo;
+
 class homeController
 {
+    public $model;
+    public function __construct() 
+    {
+        $this->model = new Todo();
+    }
+
     public function index()
     {
-        echo "<h1>Home Page <h1/>";
+        $todos = $this->model->getTodos();
+        print_r($todos);
     }
 }
