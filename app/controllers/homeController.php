@@ -2,19 +2,18 @@
 
 namespace app\controllers;
 
-use app\models\Todo;
+use app\views\Viewer;
 
-class homeController
+class HomeController
 {
-    public $model;
-    public function __construct() 
-    {
-        $this->model = new Todo();
-    }
+
 
     public function index()
     {
-        $todos = $this->model->getTodos();
-        print_r($todos);
+        
+        $viewer = new Viewer();
+        $viewer->render("home/index.php");
+
+    
     }
 }

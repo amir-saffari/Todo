@@ -13,6 +13,9 @@ $routes =
             "todos/update/([0-9]+)" => ['controller' => 'app\controllers\TodoController', 'method' => 'update'],
             "users/register" => ['controller' => 'app\controllers\UserController', 'method' => 'register'],
             "users/loginForm" => ['controller' => 'app\controllers\UserController', 'method' => 'loginForm'],
+            "users/profileForm" => ['controller' => 'app\controllers\UserController', 'method' => 'profileForm'],
+            "users/logout" => ['controller' => 'app\controllers\UserController', 'method' => 'logout'],
+            
         ],
 
         'POST' => [
@@ -21,6 +24,7 @@ $routes =
             "users/login" => ['controller' => 'app\controllers\UserController', 'method' => 'login'],
             "todos/update/([0-9]+)" => ['controller' => 'app\controllers\TodoController', 'method' => 'update'],
             "todos/delete/([0-9]+)" => ['controller' => 'app\controllers\TodoController', 'method' => 'delete'],
+            "users/updateProfile" => ['controller' => 'app\controllers\UserController', 'method' => 'updateProfile'],
         ],
     ];
 

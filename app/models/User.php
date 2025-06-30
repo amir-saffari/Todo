@@ -26,6 +26,15 @@ class User
         $stmt->execute(['username' => $username]);
         return $stmt->fetch(\PDO::FETCH_OBJ);
     }
+
+    public function existsById($id)
+    {
+        $stmt = $this->db->conn->prepare("SELECT * FROM users WHERE id = :id");
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch(\PDO::FETCH_OBJ);
+    }
+
+    
     public function createUser($name , $username , $password)
     {
         $stmt = $this->db->conn->prepare("INSERT INTO users (name , username , password) VALUES (:name , :username , :password)");
